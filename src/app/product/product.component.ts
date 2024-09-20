@@ -20,7 +20,8 @@ products = [
       price: 49.99,
       inStock: "Available",
       image: "/products/wirelessbuds.jpg",
-      description: "High-quality wireless earbuds with noise-cancellation and long battery life."
+      description: "High-quality wireless earbuds with noise-cancellation and long battery life.",
+      showDescription: false
     },
     {
       id: 2,
@@ -29,7 +30,8 @@ products = [
       price: 19.99,
       inStock: "Available",
       image: "/products/tshirt.jpeg",
-      description: "Soft and breathable organic cotton t-shirt available in various colors."
+      description: "Soft and breathable organic cotton t-shirt available in various colors.",
+      showDescription: false
     },
     {
       id: 3,
@@ -38,7 +40,8 @@ products = [
       price: 699.99,
       inStock: "Available",
       image: "/products/tv.jpg",
-      description: "55-inch 4K Ultra HD Smart TV with built-in streaming apps and voice control."
+      description: "55-inch 4K Ultra HD Smart TV with built-in streaming apps and voice control.",
+      showDescription: false
     },
     {
       id: 4,
@@ -47,7 +50,8 @@ products = [
       price: 24.99,
       inStock: "Out of Stock",
       image: "/products/bottle.webp",
-      description: "Durable stainless steel water bottle with vacuum insulation for keeping drinks cold or hot."
+      description: "Durable stainless steel water bottle with vacuum insulation for keeping drinks cold or hot.",
+      showDescription: false
     },
     {
       id: 5,
@@ -56,7 +60,8 @@ products = [
       price: 89.99,
       inStock: "Available",
       image: "/products/speaker.webp",
-      description: "Portable Bluetooth speaker with high-fidelity sound and long battery life."
+      description: "Portable Bluetooth speaker with high-fidelity sound and long battery life.",
+      showDescription: false
     },
     {
       id: 6,
@@ -65,7 +70,8 @@ products = [
       price: 39.99,
       inStock: "Out of Stock",
       image: "/products/wallet.jpg",
-      description: "Elegant leather wallet with multiple card slots and a coin compartment."
+      description: "Elegant leather wallet with multiple card slots and a coin compartment.",
+      showDescription: false
     }
   ];
 
@@ -83,6 +89,10 @@ get filteredProducts() {
     item.price.toString().includes(searchLower)
   )
   return filtered;
+}
+
+toggleDescription(product: any){
+  product.showDescription = !product.showDescription;
 }
 }
   
