@@ -17,9 +17,9 @@
             </div>
 <div class="options">
 <button class="btn btn-warning" (click)="toggleDescription(item)">{{item.showDescription ? 'Hide Details' : 'Show Details'}}</button>
-<button class="btn btn-success" *ngIf="item.inStock === 'Available'; else notifyme">Buy Now</button>
+<button class="btn btn-success" *ngIf="item.inStock === 'Available'; else notifyme" (click)="addToCart(item)"  >Buy Now</button>
 <ng-template #notifyme>
-    <button class="btn btn-danger">Notify me</button>
+    <button class="btn btn-danger" (click)="notified(item)">Notify me</button>
 </ng-template>
 </div>
 </div>

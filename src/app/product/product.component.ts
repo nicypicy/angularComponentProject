@@ -94,6 +94,12 @@ get filteredProducts() {
 toggleDescription(product: any){
   product.showDescription = !product.showDescription;
 }
+addToCart(product: any){
+  alert(`${product.name} has been added to your cart!`)
+}
+notified(product: any){
+  alert(`You will be notified when ${product.name} comes back in stock!`)
+}
 }
   
 
