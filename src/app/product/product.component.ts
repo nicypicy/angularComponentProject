@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchComponent } from "../search/search.component";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule, SearchComponent],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, SearchComponent],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
-
+temp  :any = [];
 products = [
     {
       id: 1,
@@ -72,23 +73,18 @@ products = [
 searchValue: String = '';
 
 get filteredProducts() {
-  if(!this.searchValue) {
-    return this.products
+  if (!this.searchValue) {
+    return this.products;
   }
-
   const searchLower = this.searchValue.toLowerCase();
-  const filtered = this.products.filter(item =>
+  const filtered = this.products.filter(item => 
     item.name.toLowerCase().includes(searchLower) ||
     item.category.toLowerCase().includes(searchLower) ||
     item.price.toString().includes(searchLower)
-    );
-    
-    return filtered;
+  )
+  return filtered;
 }
-  
-  
-  
-  }
+}
   
 
 
