@@ -1,7 +1,8 @@
 <!-- <div *ngFor="let item of [1,3,5]">
     <p>Number is:{{item}}</p>
 </div> -->
-<div *ngFor="let item of products">
+<app-search (searchValueChange)="searchValue = $event"></app-search>
+<div *ngFor="let item of filteredProducts">
     <div class="product-container" [ngStyle]="{backgroundColor: item.inStock === 'Available' ? '#f0fff1' : '#faedcd'}">
     <div class="image-container"><img [src]="item.image" alt="" style="max-height: 50px; max-width: 50px"></div>
     <div>

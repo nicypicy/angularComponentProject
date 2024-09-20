@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SearchComponent } from "../search/search.component";
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SearchComponent],
   templateUrl: './product.component.html',
-  styleUrl: './product.component.css'
+  styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
 
@@ -67,4 +68,27 @@ products = [
     }
   ];
 
+  
+searchValue: String = '';
+
+get filteredProducts() {
+  if(!this.searchValue) {
+    return this.products
+  }
+
+  const searchLower = this.searchValue.toLowerCase();
+  const filtered = this.products.filter(item =>
+    item.name.toLowerCase().includes(searchLower) ||
+    item.category.toLowerCase().includes(searchLower) ||
+    item.price.toString().includes(searchLower)
+    );
+    
+    return filtered;
 }
+  
+  
+  
+  }
+  
+
+
