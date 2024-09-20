@@ -2,7 +2,7 @@
     <p>Number is:{{item}}</p>
 </div> -->
 <div *ngFor="let item of products">
-    <div class="product-container" [ngStyle]="{backgroundColor: item.inStock === 'Available' ? '#ecf39e' : '#fed9b7'}">
+    <div class="product-container" [ngStyle]="{backgroundColor: item.inStock === 'Available' ? '#f0fff1' : '#f2e2ba'}">
     <div class="image-container"><img [src]="item.image" alt="" style="max-height: 50px; max-width: 50px"></div>
     <div>
         <div class="name-container"><h6>{{item.name}}</h6></div>
